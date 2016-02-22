@@ -48,6 +48,19 @@ public class ProfileLogger {
 			} catch (SecurityException e) {
 			}
 		}
+		try {
+            PreMain.helper.getClass().getDeclaredMethod("__dumpMethodsHit").invoke(PreMain.helper);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (SecurityException e) {
+            e.printStackTrace();
+        }
 		return methodsHit;
 	}
 }

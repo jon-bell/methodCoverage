@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>net.jonbell.examples.bytecode</groupId>
-	<artifactId>MethodCoverageExample</artifactId>
+	<groupId>net.jonbell.bytecode</groupId>
+	<artifactId>MethodCoverageRecorder</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<build>
@@ -39,7 +39,7 @@
 				</executions>
 				<configuration>
 					<argLine>-Xbootclasspath/p:${project.build.directory}/${project.build.finalName}.jar
-						-javaagent:${project.build.directory}/${project.build.finalName}.jar</argLine>
+						-javaagent:${project.build.directory}/${project.build.finalName}.jar=${project.build.directory}/methodtrace</argLine>
 				</configuration>
 			</plugin>
 			<plugin>
